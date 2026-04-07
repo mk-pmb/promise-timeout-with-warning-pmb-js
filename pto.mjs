@@ -3,10 +3,12 @@ import makeDeferred from 'p-defer';
 
 import parseTimeoutDuration from './src/parseTimeoutDuration.mjs';
 
+const doNothing = Boolean; // cheap built-in no-op
+
 function neverSolved() {
   // Making a new promise each time _saves_ memory compared to a shared
   // never-resolved promise b/c the latter would accumulate the handlers.
-  return new Promise(() => null);
+  return new Promise(doNothing);
 }
 
 function addSuffixToAll(o, s) {

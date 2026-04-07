@@ -2,7 +2,8 @@ import test from 'p-tape';
 
 import prTimeoutWarn from '../pto.node.js';
 
-function neverSolved() { return new Promise(() => null); }
+const doNothing = Boolean; // cheap built-in no-op
+function neverSolved() { return new Promise(doNothing); }
 
 test('short-circuit', async (t) => {
   t.plan(4);

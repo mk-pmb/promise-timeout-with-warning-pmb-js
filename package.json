@@ -1,5 +1,5 @@
 { "name": "promise-timeout-with-warning-pmb",
-  "version": "0.1.15",
+  "version": "0.1.16",
   "description": "Limit how long to wait for a promise to resolve, with optional earlier warning. (Node.js v24 maintenance fork of @instaffogmbh/promise-timeout-with-warning)",
   "keywords": [],
 
@@ -24,8 +24,8 @@
   "eslintConfig": { "extends": "nodejs-pmb" },
 
   "dependencies": {
-    "flatten": "^1.0.2",
-    "p-defer": "^2.1.0",
+    "flatten": "^1.0.3",
+    "p-defer": "^3.0.0",
     "timestring-notsep": "^1.0.2",
     "verror": "^1.10.0"
   },
@@ -35,10 +35,10 @@
     "eslint-plugin-json-light-pmb": "^1.0.7",
     "eslint-plugin-n": "^17.16.2",
     "eslint-pretty-pmb": "^1.0.7",
-    "is-regex": "^1.0.4",
-    "lodash.omit": "^4.5.0",
-    "p-tape": "^4.0.0",
-    "usnam-pmb": "^0.2.4"
+    "is-regex": "^1.2.1",
+    "lodash.omit": "^4.18.0",
+    "p-tape": "^4.0.2",
+    "usnam-pmb": "^0.2.5"
   },
 
 

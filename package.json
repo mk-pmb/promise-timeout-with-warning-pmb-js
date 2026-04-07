@@ -1,0 +1,48 @@
+{
+  "name": "@instaffogmbh/promise-timeout-with-warning",
+  "version": "0.1.15",
+  "description": "Limit how long to wait for a promise to resolve, with optional earlier warning.",
+  "keywords": [],
+  "author": "Instaffo GmbH",
+  "contributors": [
+  ],
+  "private": false,
+  "license": "MIT",
+  "homepage": "https://gitlab.com/InstaffoOpenSource/JavaScript/promise-timeout-with-warning/#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/InstaffoOpenSource/JavaScript/promise-timeout-with-warning.git"
+  },
+  "bugs": {
+    "url": "https://gitlab.com/InstaffoOpenSource/JavaScript/promise-timeout-with-warning/issues"
+  },
+  "eslintConfig": {
+    "extends": "@instaffogmbh/eslint-config-nodejs"
+  },
+  "main": "pto.node.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "justlint": "instaffo-lint-nodejs",
+    "lint": "instaffo-lint-nodejs --fix",
+    "test": "nodemjs test/all.mjs"
+  },
+  "dependencies": {
+    "esmod-pmb": "^0.1.9",
+    "flatten": "^1.0.2",
+    "p-defer": "^2.1.0",
+    "timestring-notsep": "^1.0.2",
+    "verror": "^1.10.0"
+  },
+  "devDependencies": {
+    "@instaffogmbh/eslint-config-nodejs": "^1.2.8",
+    "bluebird": "^3.5.1",
+    "is-regex": "^1.0.4",
+    "lodash.omit": "^4.5.0",
+    "nodemjs": "^0.1.8",
+    "p-tape": "^4.0.0",
+    "perish": "^1.0.2",
+    "usnam-pmb": "^0.2.4"
+  }
+}

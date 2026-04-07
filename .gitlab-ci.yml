@@ -1,0 +1,15 @@
+image: "node:10"
+
+# cache:
+#   paths:
+#     - node_modules  # 2019-04-05: don't. it broke eslint today.
+
+stages:
+  - test
+
+job_test_all:
+  stage: test
+  script:
+    - npm install .
+    - npm run justlint
+    - npm test

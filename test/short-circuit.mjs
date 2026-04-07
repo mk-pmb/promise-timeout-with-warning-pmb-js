@@ -1,6 +1,6 @@
 import test from 'p-tape'
 
-import prTimeoutWarn from '../pto.node'
+import prTimeoutWarn from '../pto.node.js'
 
 function neverSolved() { return new Promise(() => null) }
 

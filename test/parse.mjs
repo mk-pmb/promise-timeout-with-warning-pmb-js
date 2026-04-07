@@ -1,6 +1,6 @@
 import test from 'p-tape'
 
-import parseTimeoutDuration from '../src/parseTimeoutDuration'
+import parseTimeoutDuration from '../src/parseTimeoutDuration.mjs'
 
 const maxSec = parseTimeoutDuration.maxJsTimeoutSec
 const posInf = Number.POSITIVE_INFINITY

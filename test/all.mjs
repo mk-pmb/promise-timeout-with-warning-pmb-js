@@ -1,8 +1,8 @@
 import 'perish'
 import 'usnam-pmb'
 
-import './basics'
-import './fmtstr'
-import './parse'
-import './precfg'
-import './short-circuit'
+import './basics.mjs'
+import './fmtstr.mjs'
+import './parse.mjs'
+import './precfg.mjs'
+import './short-circuit.mjs'

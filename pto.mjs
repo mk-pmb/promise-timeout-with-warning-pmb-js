@@ -1,7 +1,7 @@
 import VError from 'verror'
 import makeDeferred from 'p-defer'
 
-import parseTimeoutDuration from './src/parseTimeoutDuration'
+import parseTimeoutDuration from './src/parseTimeoutDuration.mjs'
 
 function neverSolved() {
   // Making a new promise each time _saves_ memory compared to a shared

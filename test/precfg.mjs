@@ -1,7 +1,7 @@
 import test from 'p-tape'
 
-import libTestUtil from './lib-test-util'
-import prTimeoutWarn from '../pto.node'
+import libTestUtil from './lib-test-util.mjs'
+import prTimeoutWarn from '../pto.node.js'
 
 const { soon, makePromiseObserver } = libTestUtil
 const errTmo = { errorName: 'TimeoutError' }

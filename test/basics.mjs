@@ -1,22 +1,22 @@
-import test from 'p-tape'
+import test from 'p-tape';
 
-import libTestUtil from './lib-test-util.mjs'
-import prTimeoutWarn from '../pto.node.js'
+import libTestUtil from './lib-test-util.mjs';
+import prTimeoutWarn from '../pto.node.js';
 
-const { soon, makePromiseObserver } = libTestUtil
-const errTmo = { errorName: 'TimeoutError' }
+const { soon, makePromiseObserver } = libTestUtil;
+const errTmo = { errorName: 'TimeoutError' };
 
-test('basics', async(t) => {
-  const verifyPr = makePromiseObserver({ verify: t.deepEqual })
-  const logger = libTestUtil.makeVLogger()
+test('basics', async (t) => {
+  const verifyPr = makePromiseObserver({ verify: t.deepEqual });
+  const logger = libTestUtil.makeVLogger();
   const commonOpt = {
     warn: '0.2 sec',
     fail: '0.4 sec',
     logger,
     vErr: true,
-  }
+  };
 
-  const started = Date.now()
+  const started = Date.now();
   const specs = [
     { id: 'instant',
       pr: 'some plain value',
@@ -40,9 +40,9 @@ test('basics', async(t) => {
       ovr: {
         tap(tmoPr) {
           setTimeout(() => {
-            logger.log('extending')
-            tmoPr.reset()
-          }, 250)
+            logger.log('extending');
+            tmoPr.reset();
+          }, 250);
         },
       },
     },
@@ -60,7 +60,7 @@ test('basics', async(t) => {
       pr: soon(500),
       at: started + 500,
       result: 0.5,
-      ovr: { tap(tmoPr) { setTimeout(() => tmoPr.unTimeout(), 150) } },
+      ovr: { tap(tmoPr) { setTimeout(() => tmoPr.unTimeout(), 150); } },
     },
     { id: 'multiDirectWarn',
       pr: soon(200),
@@ -80,22 +80,22 @@ test('basics', async(t) => {
         fail: [undefined, null, '0.1 sec', false],
       },
     },
-  ]
-  t.plan(specs.length + 1) // +1 = log verification
+  ];
+  t.plan(specs.length + 1); // +1 = log verification
 
   await Promise.all(specs.map((spec) => {
     const tmoOpt = {
       ...commonOpt,
       msg: `test[id=${spec.id}]`,
       ...spec.ovr,
-    }
+    };
     const tmoPr = (spec.pr
       ? prTimeoutWarn(spec.pr, tmoOpt)
-      : prTimeoutWarn.never(tmoOpt))
-    const veriOpt = { ...spec, pr: tmoPr }
-    delete veriOpt.ovr
-    return verifyPr(veriOpt)
-  }))
+      : prTimeoutWarn.never(tmoOpt));
+    const veriOpt = { ...spec, pr: tmoPr };
+    delete veriOpt.ovr;
+    return verifyPr(veriOpt);
+  }));
 
   t.deepEqual(logger.slice(), [
     ['warn', 'timeout soon: test[id=multiDirectWarn]'],
@@ -105,5 +105,5 @@ test('basics', async(t) => {
     ['warn', 'timeout soon: test[id=never]'],
     ['log', 'extending'],
     ['warn', 'timeout soon: test[id=extended]'],
-  ])
-})
+  ]);
+});

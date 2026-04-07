@@ -1,16 +1,14 @@
 ﻿
 <!--#echo json="package.json" key="name" underline="=" -->
-@instaffogmbh/promise-timeout-with-warning
-==========================================
+promise-timeout-with-warning-pmb
+================================
 <!--/#echo -->
 
 <!--#echo json="package.json" key="description" -->
 Limit how long to wait for a promise to resolve, with optional earlier
-warning.
+warning. (Node.js v24 maintenance fork of
+@instaffogmbh/promise-timeout-with-warning)
 <!--/#echo -->
-
-* 📣 💼 💰 Looking for a tech job?
-  Try our [reverse recruiting service](https://instaffo.com/).
 
 
 

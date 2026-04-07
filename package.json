@@ -1,48 +1,50 @@
-{
-  "name": "@instaffogmbh/promise-timeout-with-warning",
+{ "name": "promise-timeout-with-warning-pmb",
   "version": "0.1.15",
-  "description": "Limit how long to wait for a promise to resolve, with optional earlier warning.",
+  "description": "Limit how long to wait for a promise to resolve, with optional earlier warning. (Node.js v24 maintenance fork of @instaffogmbh/promise-timeout-with-warning)",
   "keywords": [],
+
   "author": "Instaffo GmbH",
-  "contributors": [
-  ],
-  "private": false,
-  "license": "MIT",
-  "homepage": "https://gitlab.com/InstaffoOpenSource/JavaScript/promise-timeout-with-warning/#readme",
+  "homepage": "https://github.com/mk-pmb/promise-timeout-with-warning-pmb-js/#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://gitlab.com/InstaffoOpenSource/JavaScript/promise-timeout-with-warning.git"
+    "url": "git+https://github.com/mk-pmb/promise-timeout-with-warning-pmb-js.git"
   },
   "bugs": {
-    "url": "https://gitlab.com/InstaffoOpenSource/JavaScript/promise-timeout-with-warning/issues"
+    "url": "https://github.com/mk-pmb/promise-timeout-with-warning-pmb-js/issues"
   },
-  "eslintConfig": {
-    "extends": "@instaffogmbh/eslint-config-nodejs"
-  },
-  "main": "pto.node.js",
-  "directories": {
-    "test": "test"
-  },
-  "scripts": {
-    "justlint": "instaffo-lint-nodejs",
-    "lint": "instaffo-lint-nodejs --fix",
-    "test": "nodemjs test/all.mjs"
-  },
+  "contributors": [
+    "M.K. (https://github.com/mk-pmb)"
+  ],
+
+  "private": false, "license": "MIT",
+
+  "main": "pto.mjs",
+  "scripts": { "test": "elp && nodemjs test/all.mjs" },
+  "directories": { "test": "test" },
+  "eslintConfig": { "extends": "nodejs-pmb" },
+
   "dependencies": {
-    "esmod-pmb": "^0.1.9",
     "flatten": "^1.0.2",
     "p-defer": "^2.1.0",
     "timestring-notsep": "^1.0.2",
     "verror": "^1.10.0"
   },
   "devDependencies": {
-    "@instaffogmbh/eslint-config-nodejs": "^1.2.8",
+    "eslint-config-nodejs-pmb": "^0.3.13",
+    "eslint-plugin-json-light-pmb": "^1.0.7",
+    "eslint-plugin-n": "^17.16.2",
+    "eslint-pretty-pmb": "^1.0.7",
     "bluebird": "^3.5.1",
+    "equal-pmb": "^0.1.6",
     "is-regex": "^1.0.4",
     "lodash.omit": "^4.5.0",
+    "lib-demo-util-160404": "^0.1.13",
     "nodemjs": "^0.1.8",
     "p-tape": "^4.0.0",
     "perish": "^1.0.2",
     "usnam-pmb": "^0.2.4"
-  }
+  },
+
+
+  "engines": { "npm": ">=7.0.0", "node": ">=24.0.0" }
 }

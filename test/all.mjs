@@ -1,4 +1,3 @@
-import 'perish';
 import 'usnam-pmb';
 
 import './basics.mjs';

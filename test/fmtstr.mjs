@@ -1,7 +1,7 @@
 import test from 'p-tape';
 
 import libTestUtil from './lib-test-util.mjs';
-import prTimeoutWarn from '../pto.node.js';
+import prTimeoutWarn from '../pto.mjs';
 
 const { makePromiseObserver } = libTestUtil;
 

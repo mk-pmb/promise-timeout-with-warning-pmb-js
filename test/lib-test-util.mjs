@@ -1,11 +1,11 @@
-import Promise from 'bluebird';
-import omitKeys from 'lodash.omit';
 import isRgx from 'is-regex';
+import omitKeys from 'lodash.omit';
+import pDelay from 'delay';
 
 
 function soon(ms, val) {
   if (val === undefined) { return soon(ms, (+ms / 1e3)); }
-  return Promise.delay(ms, val);
+  return pDelay(ms).then(() => val);
 }
 
 function doom(errName, ms) {

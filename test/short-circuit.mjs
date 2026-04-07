@@ -1,6 +1,6 @@
 import test from 'p-tape';
 
-import prTimeoutWarn from '../pto.node.js';
+import prTimeoutWarn from '../pto.mjs';
 
 const doNothing = Boolean; // cheap built-in no-op
 function neverSolved() { return new Promise(doNothing); }

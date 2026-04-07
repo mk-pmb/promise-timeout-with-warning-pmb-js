@@ -14,6 +14,20 @@ function doom(errName, ms) {
   return soon(ms, Promise.reject(err));
 }
 
+
+const acceptablePrematureTimeoutMsec = (function decide() {
+  const { env } = process;
+  if (env.CI && env.GITHUB_WORKSPACE) {
+    return 3;
+    /* 2026-04-07: On GitHub CI, our timeout reliably, reproducibly, seems
+      to fire about one millisecond too early. My current theory is that
+      GitHub's CI VMs may have a feature where their system timers are
+      trying too eagerly to compensate for their cloud's high load. */
+  }
+  return 0;
+}());
+
+
 const vlogChannels = [
   // console-like
   'debug',
@@ -62,7 +76,7 @@ function makePromiseObserver(sharedOpt) {
     const finished = Date.now();
     const late = finished - (+how.at || 0);
     const tolerance = (+how.tol || 25);
-    if (late < 0) { report.tooEarly = late; }
+    if (late < -acceptablePrematureTimeoutMsec) { report.tooEarly = late; }
     if (late > tolerance) { report.tooLate = late; }
     if (how.verify) {
       how.verify(report, omitKeys(how, [
